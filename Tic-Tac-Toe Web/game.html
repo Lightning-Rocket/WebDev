@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>TicTacToe</title>
+	<link rel="stylesheet" href="style/game.css"/>
+	<link rel="icon" href="resources/images/homeProjects-Logo.png"/>
+	<script src="script/game.js"></script>
+	<script>
+	function two_player() {
+		document.getElementById("cpu-player").hidden=true;
+		document.getElementById("two-player").hidden=false;
+	}
+	function cpu_player() {
+		document.getElementById("two-player").hidden=true;
+		document.getElementById("cpu-player").hidden=false;
+	}
+	</script>
+</head>
+<body onload="game_run(false)">	
+	<div class="user_details">
+		<span id="user_details">""</span> has logged in.
+	</div>
+	<h1> Tic-Tac-Toe </h1>
+	<h3> (Two player game) </h3>
+	
+	<input type="radio" name="mode" onclick="two_player()"/> Two Player
+	<input type="radio" name="mode" onclick="cpu_player()"/> CPU
+	<div id="two-player" hidden>
+		<input type="text" id="player1" required placeholder="Player-1 name"/>
+		<input type="text" id="player2" required placeholder="Player-2 name"/>
+	</div>
+	<div id="cpu-player" hidden>
+		<input type="text" id="player1" required placeholder="Player name"/>
+	</div>
+	<button onclick="playerDetails(true)">Start Game</button>
+	<button onclick="location.reload()">Restart</button>
+	<br/>
+	
+	
+	<table>
+	<tr>
+		<th><button id='b0' onclick='Game(0)' class="play_btns">_</button><th>
+		<th><button id='b1' onclick='Game(1)' class="play_btns">_</button><th>
+		<th><button id='b2' onclick='Game(2)' class="play_btns">_</button><th>
+	</tr> <tr>
+		<td><button id='b3' onclick='Game(3)' class="play_btns">_</button><td>
+		<td><button id='b4' onclick='Game(4)' class="play_btns">_</button><td>
+		<td><button id='b5' onclick='Game(5)' class="play_btns">_</button><td>
+	</tr> <tr>
+		<td><button id='b6' onclick='Game(6)' class="play_btns">_</button><td>
+		<td><button id='b7' onclick='Game(7)' class="play_btns">_</button><td>
+		<td><button id='b8' onclick='Game(8)' class="play_btns">_</button><td>
+	</tr>
+	</table>
+	
+	<p id="show"></p>
+</body>
+</html>
